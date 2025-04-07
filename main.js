@@ -1,7 +1,6 @@
 let container = document.getElementById("container");
 let column;
-let cell;
-let columnNumber = 16;
+let columnNumber = 100;
 
 for (let i = 0; i < columnNumber; i++) {
     column = document.createElement('div');
@@ -15,9 +14,27 @@ console.log(columnArray);
 
 columnArray.forEach(element => {
     for (let i = 0; i < columnNumber; i++) {
-        cell = document.createElement('div');
-        cell.className = "cell";
-        element.appendChild(cell);
+        let newCell = document.createElement('div');
+        newCell.className = "cell";
+        element.appendChild(newCell);
     }
 }
 );
+
+let cells = document.getElementsByClassName("cell");
+console.log(cells);
+
+cellArray = Array.from(cells);
+
+let isMouseDown = false;
+
+document.addEventListener("mousedown", event => {
+    isMouseDown = true;
+    console.log('mouse is down');
+});
+
+cellArray.forEach((cell)=> {
+    cell.addEventListener("", event => {
+        event.target.style.backgroundColor = "black";
+    })
+});
