@@ -1,6 +1,6 @@
 let container = document.getElementById("container");
 let column;
-let columnNumber = 100;
+let columnNumber = 16;
 
 for (let i = 0; i < columnNumber; i++) {
     column = document.createElement('div');
@@ -10,7 +10,6 @@ for (let i = 0; i < columnNumber; i++) {
 
 let allColumns = document.querySelectorAll(".column");
 const columnArray = Array.from(allColumns);
-console.log(columnArray);
 
 columnArray.forEach(element => {
     for (let i = 0; i < columnNumber; i++) {
@@ -22,19 +21,24 @@ columnArray.forEach(element => {
 );
 
 let cells = document.getElementsByClassName("cell");
-console.log(cells);
-
 cellArray = Array.from(cells);
-
-let isMouseDown = false;
-
-document.addEventListener("mousedown", event => {
-    isMouseDown = true;
-    console.log('mouse is down');
-});
+let isMouseDown;
 
 cellArray.forEach((cell)=> {
-    cell.addEventListener("", event => {
-        event.target.style.backgroundColor = "black";
-    })
-});
+    cell.addEventListener("mouseenter", event => {
+        cell.addEventListener("mousedown", e =>  {     
+            isMouseDown = 2;
+            console.log("mouse down");
+    });
+    cell.addEventListener('mouseup', e => {
+            isMouseDown = 1;
+            console.log("mouse up");
+    });
+    switch(isMouseDown){
+        case 1:
+            break;
+        case 2:
+            cell.style.backgroundColor = "black";
+            break;
+        }
+            })});
