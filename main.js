@@ -9,13 +9,13 @@ for (let i = 0; i < columnNumber; i++) {
 };
 
 let allColumns = document.querySelectorAll(".column");
-const columnArray = Array.from(allColumns);
+let columnArray = Array.from(allColumns);
 
-columnArray.forEach(element => {
+columnArray.forEach(column => {
     for (let i = 0; i < columnNumber; i++) {
         let newCell = document.createElement('div');
         newCell.className = "cell";
-        element.appendChild(newCell);
+        column.appendChild(newCell);
     }
 }
 );
@@ -24,8 +24,15 @@ let cells = document.getElementsByClassName("cell");
 cellArray = Array.from(cells);
 let isMouseDown;
 
+let pen = function() {
 cellArray.forEach((cell)=> {
-    cell.addEventListener("mouseenter", event => {
+    cell.addEventListener("mousedown", e => {
+    cell.style.backgroundColor = "black";
+    });
+});
+
+cellArray.forEach((cell)=> {
+    cell.addEventListener("mouseenter", e => {
         cell.addEventListener("mousedown", e =>  {     
             isMouseDown = 2;
             console.log("mouse down");
@@ -42,3 +49,38 @@ cellArray.forEach((cell)=> {
             break;
         }
             })});
+        };
+
+
+let gridBtn = document.getElementById("new-grid");
+
+gridBtn.addEventListener("click", e=> {
+    columnArray.forEach((column)=> {
+        column.remove();
+    });
+    cellArray.forEach((cell)=> {
+        cell.remove();
+    });
+    let newGridSize = window.prompt("Enter grid size between 1-100:");
+
+    for (let i = 0; i < newGridSize; i++) {
+        column = document.createElement('div');
+        column.className = "column";
+        container.appendChild(column);
+    };
+
+    allColumns = document.querySelectorAll(".column");
+    columnArray = Array.from(allColumns);
+
+    columnArray.forEach(column => {
+    for (let i = 0; i < newGridSize; i++) {
+        newCell = document.createElement('div');
+        newCell.className = "cell";
+        column.appendChild(newCell);
+    }
+
+}
+);
+pen;
+});
+
