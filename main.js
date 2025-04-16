@@ -24,7 +24,7 @@ let cells = document.getElementsByClassName("cell");
 cellArray = Array.from(cells);
 let isMouseDown;
 
-let pen = function() {
+function pen() {
 cellArray.forEach((cell)=> {
     cell.addEventListener("mousedown", e => {
     cell.style.backgroundColor = "black";
@@ -49,8 +49,37 @@ cellArray.forEach((cell)=> {
             break;
         }
             })});
-        };
+        }; 
 
+function eraser() {
+    cellArray.forEach((cell)=> {
+        cell.addEventListener("mousedown", e => {
+        cell.style.backgroundColor = "white";
+        });
+    });
+    
+    cellArray.forEach((cell)=> {
+        cell.addEventListener("mouseenter", e => {
+            cell.addEventListener("mousedown", e =>  {     
+                isMouseDown = 2;
+                console.log("mouse down");
+        });
+        cell.addEventListener('mouseup', e => {
+                isMouseDown = 1;
+                console.log("mouse up");
+        });
+        switch(isMouseDown){
+            case 1:
+                break;
+            case 2:
+                cell.style.backgroundColor = "white";
+                break;
+            }
+                })});
+            }; 
+
+
+pen();
 
 let gridBtn = document.getElementById("new-grid");
 
@@ -79,8 +108,15 @@ gridBtn.addEventListener("click", e=> {
         column.appendChild(newCell);
     }
 
-}
-);
-pen;
-});
+    cells = document.getElementsByClassName("cell");
+    cellArray = Array.from(cells);
+    let isMouseDown;
 
+    pen();
+})});
+
+let penBtn = document.getElementById("pen");
+penBtn.addEventListener("click", pen);
+
+let eraserBtn = document.getElementById("eraser");
+eraserBtn.addEventListener("click", eraser);
