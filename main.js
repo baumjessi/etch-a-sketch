@@ -115,8 +115,52 @@ gridBtn.addEventListener("click", e=> {
     pen();
 })});
 
+const hexDigits = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"]
+let randomColor;
+
+function getHexDigits(index) {
+    return hexDigits[index]
+}
+
+function getRandomColor() {
+    randomColor = "#"
+
+    for (let index = 0; index < 6; index++){
+        const randomDigit = Math.floor ( Math.random() * hexDigits.length ) 
+        randomColor += getHexDigits(randomDigit);
+    }
+    return randomColor;
+};
+
+
 let penBtn = document.getElementById("pen");
 penBtn.addEventListener("click", pen);
 
 let eraserBtn = document.getElementById("eraser");
 eraserBtn.addEventListener("click", eraser);
+
+let rainbowBtn = document.getElementById("rainbow");
+rainbowBtn.addEventListener("click", e => {
+    cellArray.forEach((cell)=> {
+        cell.addEventListener("mousedown", e => {
+        cell.style.backgroundColor = getRandomColor();
+        });
+    });
+    
+    cellArray.forEach((cell)=> {
+        cell.addEventListener("mouseenter", e => {
+            cell.addEventListener("mousedown", e =>  {     
+                isMouseDown = 2;
+                console.log("mouse down");
+        });
+        cell.addEventListener('mouseup', e => {
+                isMouseDown = 1;
+                console.log("mouse up");
+        });
+        switch(isMouseDown){
+            case 1:
+                break;
+            case 2:
+                cell.style.backgroundColor = getRandomColor();
+                break;
+            }})})});
