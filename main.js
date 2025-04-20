@@ -79,7 +79,7 @@ gridBtn.addEventListener("click", e=> {
     cellArray.forEach((cell)=> {
         cell.remove();
     });
-    let newGridSize = window.prompt("Enter a new grid size between 1-100. The grid will reset and the black pen tool will be selected.");
+    let newGridSize = window.prompt("Enter a new grid size between 1-100. The grid will reset, and the default pen tool will be selected.");
 
     for (let i = 0; i < newGridSize; i++) {
         column = document.createElement('div');
