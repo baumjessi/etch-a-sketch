@@ -26,12 +26,6 @@ let isMouseDown;
 
 function pen() {
 cellArray.forEach((cell)=> {
-    cell.addEventListener("mousedown", e => {
-    cell.style.backgroundColor = "black";
-    });
-});
-
-cellArray.forEach((cell)=> {
     cell.addEventListener("mouseenter", e => {
         cell.addEventListener("mousedown", e =>  {     
             isMouseDown = 2;
@@ -48,8 +42,7 @@ cellArray.forEach((cell)=> {
             cell.style.backgroundColor = "black";
             break;
         }
-            })});
-        }; 
+            })})};
 
 function eraser() {
     cellArray.forEach((cell)=> {
@@ -110,8 +103,6 @@ gridBtn.addEventListener("click", e=> {
 
     cells = document.getElementsByClassName("cell");
     cellArray = Array.from(cells);
-    let isMouseDown;
-
     pen();
 })});
 
@@ -132,7 +123,6 @@ function getRandomColor() {
     return randomColor;
 };
 
-
 let penBtn = document.getElementById("pen");
 penBtn.addEventListener("click", pen);
 
@@ -140,13 +130,13 @@ let eraserBtn = document.getElementById("eraser");
 eraserBtn.addEventListener("click", eraser);
 
 let rainbowBtn = document.getElementById("rainbow");
+
 rainbowBtn.addEventListener("click", e => {
     cellArray.forEach((cell)=> {
         cell.addEventListener("mousedown", e => {
         cell.style.backgroundColor = getRandomColor();
         });
     });
-    
     cellArray.forEach((cell)=> {
         cell.addEventListener("mouseenter", e => {
             cell.addEventListener("mousedown", e =>  {     
@@ -163,4 +153,11 @@ rainbowBtn.addEventListener("click", e => {
             case 2:
                 cell.style.backgroundColor = getRandomColor();
                 break;
-            }})})});
+        }})})});
+
+let clearBtn = document.getElementById("clear");
+clearBtn.addEventListener("click", e=> {
+    cellArray.forEach((cell)=> {
+        cell.style.backgroundColor = "white";
+    });
+});

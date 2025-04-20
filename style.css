@@ -1,5 +1,8 @@
 html {
     background-color: #2D2F41;
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 #container {
