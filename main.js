@@ -29,11 +29,9 @@ cellArray.forEach((cell)=> {
     cell.addEventListener("mouseenter", e => {
         cell.addEventListener("mousedown", e =>  {     
             isMouseDown = 2;
-            console.log("mouse down");
     });
     cell.addEventListener('mouseup', e => {
             isMouseDown = 1;
-            console.log("mouse up");
     });
     switch(isMouseDown){
         case 1:
@@ -55,11 +53,9 @@ function eraser() {
         cell.addEventListener("mouseenter", e => {
             cell.addEventListener("mousedown", e =>  {     
                 isMouseDown = 2;
-                console.log("mouse down");
         });
         cell.addEventListener('mouseup', e => {
                 isMouseDown = 1;
-                console.log("mouse up");
         });
         switch(isMouseDown){
             case 1:
@@ -83,7 +79,7 @@ gridBtn.addEventListener("click", e=> {
     cellArray.forEach((cell)=> {
         cell.remove();
     });
-    let newGridSize = window.prompt("Enter grid size between 1-100:");
+    let newGridSize = window.prompt("Enter a new grid size between 1-100. The grid will reset and the black pen tool will be selected.");
 
     for (let i = 0; i < newGridSize; i++) {
         column = document.createElement('div');
@@ -141,11 +137,9 @@ rainbowBtn.addEventListener("click", e => {
         cell.addEventListener("mouseenter", e => {
             cell.addEventListener("mousedown", e =>  {     
                 isMouseDown = 2;
-                console.log("mouse down");
         });
         cell.addEventListener('mouseup', e => {
                 isMouseDown = 1;
-                console.log("mouse up");
         });
         switch(isMouseDown){
             case 1:
