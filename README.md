@@ -1,6 +1,5 @@
 # SKETCHPAD
-Created by Jessi B./
-May 2025
+Created by Jessi B. in April 2025
 
 ## About
 This project is part of the Foundations portion of the Odin Project. It is my second creation using Javascript and DOM manipulation. This simple sketchpad app has some cool functions: a black pen tool, a rainbow pen tool, an eraser, a button to resize the sketchpad's grid, and a button to clear the page. The various stroke tools work by holding down the mouse. Have fun!
