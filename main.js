@@ -44,12 +44,6 @@ cellArray.forEach((cell)=> {
 
 function eraser() {
     cellArray.forEach((cell)=> {
-        cell.addEventListener("mousedown", e => {
-        cell.style.backgroundColor = "white";
-        });
-    });
-    
-    cellArray.forEach((cell)=> {
         cell.addEventListener("mouseenter", e => {
             cell.addEventListener("mousedown", e =>  {     
                 isMouseDown = 2;
@@ -65,8 +59,7 @@ function eraser() {
                 break;
             }
                 })});
-            }; 
-
+}; 
 
 pen();
 
@@ -79,7 +72,7 @@ gridBtn.addEventListener("click", e=> {
     cellArray.forEach((cell)=> {
         cell.remove();
     });
-    let newGridSize = window.prompt("Enter a new grid size between 1-100. The grid will reset, and the default pen tool will be selected.");
+    let newGridSize = window.prompt("Enter a new grid size between 1-100. The grid will reset, and the defgit ault pen tool will be selected.");
 
     for (let i = 0; i < newGridSize; i++) {
         column = document.createElement('div');
@@ -128,11 +121,6 @@ eraserBtn.addEventListener("click", eraser);
 let rainbowBtn = document.getElementById("rainbow");
 
 rainbowBtn.addEventListener("click", e => {
-    cellArray.forEach((cell)=> {
-        cell.addEventListener("mousedown", e => {
-        cell.style.backgroundColor = getRandomColor();
-        });
-    });
     cellArray.forEach((cell)=> {
         cell.addEventListener("mouseenter", e => {
             cell.addEventListener("mousedown", e =>  {     
