@@ -18,7 +18,7 @@ The various icons were pulled from Google Fonts. I did not create them! Click ea
 
 [Eraser](https://fonts.google.com/icons?selected=Material+Symbols+Outlined:ink_eraser:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=eraser&icon.size=24&icon.color=%2339ff14&icon.platform=web)
 
-[Clear](httpgs://fonts.google.com/icons?selected=Material+Symbols+Outlined:cancel:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=clear&icon.size=24&icon.color=%2339ff14&icon.platform=web)
+[Clear](https://fonts.google.com/icons?selected=Material+Symbols+Outlined:cancel:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=clear&icon.size=24&icon.color=%2339ff14&icon.platform=web)
 
 ## Found a bug?
 I'm open to feedback regarding bugs, cleaning up code, etc. Email me at hellojessib@outlook.com or reach out to me on Discord (@jssi.b).
